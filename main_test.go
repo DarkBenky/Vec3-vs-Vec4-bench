@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"testing"
+
 	"github.com/chewxy/math32"
 )
 
@@ -64,6 +65,15 @@ func (v Vec4) Normalize() Vec4 {
 	}
 	return Vec4{v.X / mag, v.Y / mag, v.Z / mag, v.W / mag}
 }
+
+func (v Vec4) NormalizeMath32() Vec4 {
+	mag := math32.Sqrt(v.X*v.X + v.Y*v.Y + v.Z*v.Z + v.W*v.W)
+	if mag == 0 {
+		return Vec4{0, 0, 0, 0}
+	}
+	return Vec4{v.X / mag, v.Y / mag, v.Z / mag, v.W / mag}
+}
+
 
 func (v Vec4) Cross(other Vec4) Vec4 {
 	return Vec4{
@@ -131,6 +141,13 @@ func BenchmarkVec4Normalize(b *testing.B) {
 	}
 }
 
+func BenchmarkVec4NormalizeMath32(b *testing.B) {
+	v := Vec4{1, 2, 3, 4}
+	for i := 0; i < b.N; i++ {
+		_ = v.NormalizeMath32()
+	}
+}
+
 func BenchmarkVec3Cross(b *testing.B) {
 	v1, v2 := Vec3{1, 2, 3}, Vec3{4, 5, 6}
 	for i := 0; i < b.N; i++ {
@@ -144,7 +161,6 @@ func BenchmarkVec4Cross(b *testing.B) {
 		_ = v1.Cross(v2)
 	}
 }
-
 
 func main() {
 	fmt.Println("Run benchmarks using `go test -bench=.`")
