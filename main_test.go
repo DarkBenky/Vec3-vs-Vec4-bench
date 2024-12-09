@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"math"
 	"testing"
+	"github.com/chewxy/math32"
 )
 
 type Vec3 struct {
