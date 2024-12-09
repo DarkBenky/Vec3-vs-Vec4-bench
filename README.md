@@ -9,21 +9,21 @@ This project benchmarks two vector structs, `Vec3` (3 `float32` components) and 
 | Benchmark                     | Iterations  | Time (ns/op) |
 |-------------------------------|-------------|--------------|
 | **Addition**                  |             |              |
-| `Vec3Add`                     | 1,000,000,000 | 0.2539     |
-| `Vec4Add`                     | 1,000,000,000 | 0.2541     |
+| `Vec3Add`                     | 1,000,000,000 | 0.2539      |
+| `Vec4Add`                     | 1,000,000,000 | 0.2541      |
 | **Subtraction**               |             |              |
-| `Vec3Sub`                     | 1,000,000,000 | 0.2558     |
-| `Vec4Sub`                     | 1,000,000,000 | 0.2558     |
+| `Vec3Sub`                     | 1,000,000,000 | 0.2558      |
+| `Vec4Sub`                     | 1,000,000,000 | 0.2558      |
 | **Dot Product**               |             |              |
-| `Vec3Dot`                     | 1,000,000,000 | 0.2552     |
-| `Vec4Dot`                     | 1,000,000,000 | 0.2574     |
+| `Vec3Dot`                     | 1,000,000,000 | 0.2552      |
+| `Vec4Dot`                     | 1,000,000,000 | 0.2574      |
 | **Normalization**             |             |              |
-| `Vec3Normalize`               | 1,000,000,000 | 0.2532     |
-| `Vec4Normalize`               | 1,000,000,000 | 0.2544     |
-| `Vec4NormalizeMath32`         | 206,433,376   | 5.696      |
+| `Vec3Normalize`               | 1,000,000,000 | 0.2532      |
+| `Vec4Normalize`               | 1,000,000,000 | 0.2544      |
+| `Vec4NormalizeMath32`         | 206,433,376   | 5.696       |
 | **Cross Product**             |             |              |
-| `Vec3Cross`                   | 1,000,000,000 | 0.2539     |
-| `Vec4Cross`                   | 1,000,000,000 | 0.2550     |
+| `Vec3Cross`                   | 1,000,000,000 | 0.2539      |
+| `Vec4Cross`                   | 1,000,000,000 | 0.2550      |
 
 ## Key Findings
 
